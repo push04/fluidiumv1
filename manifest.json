@@ -1,0 +1,16 @@
+{
+  "name": "Fluidium",
+  "short_name": "Fluidium",
+  "description": "Interactive virtual lab for fluid mechanics and engineering simulations.",
+  "icons": [
+    {
+      "src": "/logo192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#4f46e5",
+  "background_color": "#ffffff"
+}
