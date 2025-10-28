@@ -3,10 +3,5 @@
   publish = "dist"
 
 [dev]
-  # Local development settings for Netlify CLI
   command = "npm run dev"
   port = 8888
-
-[functions]
-  # Directory for Netlify Functions if you add any serverless functions
-  directory = "netlify-functions"

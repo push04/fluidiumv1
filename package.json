@@ -1,16 +1,11 @@
 {
   "name": "fluidium",
   "private": true,
-  "version": "2.0.0",
+  "version": "2.1.0",
   "type": "module",
   "description": "Fluidium – Interactive Virtual Lab for Fluid Mechanics & Engineering Simulations with enhanced UI/UX and dark mode support.",
   "author": "Fluidium Team",
   "license": "MIT",
-  "homepage": "https://fluidium.netlify.app",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/push04/fluidium.git"
-  },
   "scripts": {
     "dev": "vite",
     "build": "vite build --emptyOutDir",
@@ -27,7 +22,7 @@
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^4.2.1",
-    "vite": "^5.0.11",
+    "vite": "^5.4.0",
     "terser": "^5.27.0",
     "tailwindcss": "^3.4.1",
     "postcss": "^8.4.33",

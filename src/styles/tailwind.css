@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body { @apply antialiased; }
+
+.light body { @apply text-gray-800 bg-background-light; }
+.dark body { @apply text-gray-200 bg-background-dark; }
