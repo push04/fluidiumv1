@@ -1,5 +1,6 @@
 
 import React, { createContext, useContext, useEffect, useMemo, useRef, useState } from 'react';
+import { experimentMeta } from '../experiments/presets';
 import * as registry from '../experiments/registry';
 
 const MAX_POINTS = 900;
@@ -9,7 +10,7 @@ function sanitizePresets(obj){
   const cleaned = {};
   const bad = /(test|audit|dev|tmp)/i;
   for (const [k,v] of Object.entries(obj||{})){
-    if (bad.test(k)) continue; // drop noisy presets
+    if (bad.test(k)) continue;
     cleaned[k] = v;
   }
   return cleaned;
@@ -23,13 +24,14 @@ export const AppProvider = ({ children }) => {
   const [parameters, setParameters] = useState(() => registry.getDefaults('fluid_gl'));
   const [data, setData] = useState([]);
   const [ui, setUi] = useState({ showSidebar: true, showOnboard: true, error: null });
-  const presetsKey = 'fluidium-presets-v4';
+  const [activePresetMeta, setActivePresetMeta] = useState(null);
+  const presetsKey = 'fluidium-presets-v5';
   const [presets, setPresets] = useState(() => sanitizePresets(JSON.parse(localStorage.getItem(presetsKey) || '{}')));
   const canvasRef = useRef(null);
 
-  useEffect(() => { const t = setTimeout(()=>setIsBooting(false), 600); return () => clearTimeout(t); }, []);
+  useEffect(() => { const t = setTimeout(()=>setIsBooting(false), 500); return () => clearTimeout(t); }, []);
   useEffect(() => { document.documentElement.classList.remove('light','dark'); document.documentElement.classList.add(theme); localStorage.setItem('theme', theme); }, [theme]);
-  useEffect(() => { setParameters(registry.getDefaults(selectedExperiment)); setData([]); setIsRunning(false); }, [selectedExperiment]);
+  useEffect(() => { setParameters(registry.getDefaults(selectedExperiment)); setData([]); setIsRunning(false); setActivePresetMeta(null); }, [selectedExperiment]);
 
   const toggleTheme = () => setTheme(p => (p==='light'?'dark':'light'));
   const updateParameter = (name, value) => setParameters(prev => ({ ...prev, [name]: value }));
@@ -45,6 +47,12 @@ export const AppProvider = ({ children }) => {
   const loadPreset = (name) => { const key = `${selectedExperiment}:${name}`; if (presets[key]) setParameters(presets[key]); };
   const deletePreset = (name) => { const key = `${selectedExperiment}:${name}`; const next={...presets}; delete next[key]; setPresets(next); localStorage.setItem(presetsKey, JSON.stringify(next)); };
 
+  // Apply curated preset metadata (title/desc/params) and set parameters
+  const applyCuratedPreset = (id, presetKey) => {
+    const m = experimentMeta[id]?.presets?.find(p => p.key === presetKey);
+    if (m){ setParameters(m.params); setActivePresetMeta(m); }
+  };
+
   const value = useMemo(() => ({
     isBooting, theme, toggleTheme,
     isRunning, startSimulation, pauseSimulation, resetSimulation,
@@ -52,8 +60,9 @@ export const AppProvider = ({ children }) => {
     parameters, updateParameter,
     data, addDataPoint,
     presets, savePreset, loadPreset, deletePreset,
-    canvasRef, ui, setUi
-  }), [isBooting, theme, isRunning, selectedExperiment, parameters, data, presets, ui]);
+    canvasRef, ui, setUi,
+    experimentMeta, activePresetMeta, applyCuratedPreset
+  }), [isBooting, theme, isRunning, selectedExperiment, parameters, data, presets, ui, activePresetMeta]);
 
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>;
 };

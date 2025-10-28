@@ -2,9 +2,9 @@
 {
   "name": "fluidium",
   "private": true,
-  "version": "6.1.0",
+  "version": "7.0.0",
   "type": "module",
-  "description": "Fluidium ULTRA A11y – WebGL2 fluids with accessibility, validation, onboarding, and lazy-loaded charts.",
+  "description": "Fluidium ULTRA FINAL – Accessible, robust virtual lab with WebGL fluids, presets metadata, toasts, and lazy charts.",
   "scripts": {
     "dev": "vite",
     "build": "vite build --emptyOutDir",
@@ -13,6 +13,7 @@
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "recharts": "^2.10.3",
     "framer-motion": "^11.0.3"
   },
   "devDependencies": {

@@ -1,8 +1,8 @@
 
 export const defaultsHJump = () => ({ Q: 0.2, b: 1.0, y1: 0.2, g: 9.81 });
 export const graphHJump = { lines: [
-  { key:'Fr1', label:'Froude (upstream)', color:'#4338CA', yAxisId:'left' },
-  { key:'y2', label:'Sequent Depth y2 (m)', color:'#F59E0B', yAxisId:'right' }
+  { key:'Fr1', label:'Froude (upstream)', color:'#1F77B4', yAxisId:'left' },
+  { key:'y2', label:'Sequent Depth y2 (m)', color:'#FF7F0E', yAxisId:'right' }
 ]};
 
 export function tickHJump({ Q, b, y1, g }){

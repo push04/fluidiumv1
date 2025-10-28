@@ -1,8 +1,8 @@
 
 export const defaultsBuoy = () => ({ rhoFluid: 1000, rhoObj: 600, width: 0.3, height: 0.3, g: 9.81 });
 export const graphBuoy = { lines: [
-  { key:'F_b', label:'Buoyant Force (N)', color:'#22C55E', yAxisId:'left' },
-  { key:'submerged', label:'Submerged Height (m)', color:'#4338CA', yAxisId:'right' }
+  { key:'F_b', label:'Buoyant Force (N)', color:'#2CA02C', yAxisId:'left' },
+  { key:'submerged', label:'Submerged Height (m)', color:'#9467BD', yAxisId:'right' }
 ]};
 
 export function tickBuoy({ rhoFluid, rhoObj, width, height, g }){

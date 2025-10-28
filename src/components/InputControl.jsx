@@ -1,6 +1,5 @@
 
 import React, { useMemo, useState, useEffect } from 'react';
-import Tooltip from './Tooltip.jsx';
 
 export default function InputControl({ label, value, min, max, step, onChange, name, symbol }){
   const [val, setVal] = useState(value);
@@ -28,7 +27,7 @@ export default function InputControl({ label, value, min, max, step, onChange, n
   return (
     <div role="group" aria-labelledby={`${id}-label`}>
       <label id={`${id}-label`} className="label" htmlFor={id}>
-        {label} {symbol && <Tooltip text={symbol} id={`${id}-tip`} />}
+        {label} {symbol && <span className="helper ml-2">({symbol})</span>}
         <span className="sr-only">Parameter input</span>
       </label>
       <div className="flex items-center gap-2">

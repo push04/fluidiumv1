@@ -11,12 +11,12 @@ export default function Onboarding(){
         <h2 id="welcome-title" className="text-xl font-bold mb-2">Welcome to Fluidium</h2>
         <ol className="list-decimal ml-6 space-y-2 text-sm">
           <li>Select an experiment from the left.</li>
-          <li>Adjust parameters with the number fields or sliders.</li>
-          <li>Press <b>Start</b>. For WebGL fluid, drag on the canvas to inject flow.</li>
-          <li>Use the toolbar to save <b>Presets</b>, export <b>CSV</b>, or take a <b>Snapshot</b>.</li>
+          <li>Adjust parameters with number fields or sliders.</li>
+          <li>Press <b>Start</b>. For WebGL fluid, drag on the canvas to inject dye/flow.</li>
+          <li>Use <b>CSV</b> & <b>Snapshot</b> from the toolbar.</li>
         </ol>
         <div className="mt-4 flex justify-end gap-2">
-          <button className="btn btn-ghost" onClick={()=>setUi(u=>({...u, showOnboard:false}))}>Close</button>
+          <button className="btn btn-ghost touch-target" onClick={()=>setUi(u=>({...u, showOnboard:false}))}>Close</button>
         </div>
       </div>
     </div>

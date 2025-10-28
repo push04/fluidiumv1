@@ -1,8 +1,8 @@
 
 export const defaultsMoody = () => ({ Re: 1e5, relRough: 0.0002, L: 10, D: 0.3, V: 2.0, g: 9.81 });
 export const graphMoody = { lines: [
-  { key:'f', label:'Friction Factor f', color:'#4338CA', yAxisId:'left' },
-  { key:'hf', label:'Head Loss h_f (m)', color:'#EF4444', yAxisId:'right' }
+  { key:'f', label:'Friction Factor f', color:'#1F77B4', yAxisId:'left' },
+  { key:'hf', label:'Head Loss h_f (m)', color:'#FF7F0E', yAxisId:'right' }
 ]};
 
 function colebrook(Re, epsRel){
@@ -13,7 +13,6 @@ function colebrook(Re, epsRel){
     const rhs = -2.0*Math.log10( epsRel/3.7 + 2.51/(Re*Math.sqrt(f)) );
     const df = lhs - rhs;
     if (Math.abs(df) < 1e-6) break;
-    // secant-like step
     const dfdf = -0.5*Math.pow(f, -1.5);
     f -= df / (dfdf || -1e-4);
     if (f <= 0) f = 1e-4;

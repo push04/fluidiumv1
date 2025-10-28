@@ -28,7 +28,7 @@ export default function DataTable(){
             {data.length===0 && (
               <tr>
                 <td colSpan={cols.length+1} className="px-3 py-3 text-center">
-                  No data yet. {isRunning? 'Simulation running…' : 'Click '} {!isRunning && <strong>Start</strong>} {!isRunning && ' to run the simulation.'}
+                  No data yet. {isRunning? 'Simulation running…' : 'Press '} {!isRunning && <strong>Start</strong>} {!isRunning && ' to begin and see results here.'}
                 </td>
               </tr>
             )}

@@ -3,8 +3,8 @@ import { createFluidGL } from '../lib/fluidgl';
 
 export const defaultsFluidGL = () => ({ vort: 0.35, radius: 0.06, dye: 0.6, force: 0.6 });
 export const graphFluidGL = { lines: [
-  { key:'avgSpeed', label:'Avg Speed', color:'#4338CA', yAxisId:'left' },
-  { key:'totalDye', label:'Total Dye', color:'#EC4899', yAxisId:'right' }
+  { key:'avgSpeed', label:'Avg Speed', color:'#1F77B4', yAxisId:'left' },
+  { key:'totalDye', label:'Total Dye', color:'#FF7F0E', yAxisId:'right' }
 ]};
 
 let engine = null;

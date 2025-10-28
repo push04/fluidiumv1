@@ -6,15 +6,15 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: { DEFAULT: '#4338CA', dark: '#312E81' }, /* indigo-600/900 */
-        secondary: { DEFAULT: '#7C3AED', dark: '#5B21B6' }, /* violet */
-        accent: { DEFAULT: '#EC4899', dark: '#BE185D' },
+        primary: { DEFAULT: '#1F77B4' }, /* cbf blue */
+        secondary: { DEFAULT: '#FF7F0E' }, /* cbf orange */
+        accent: { DEFAULT: '#2CA02C' }, /* cbf green */
+        purple: { DEFAULT: '#9467BD' }, /* cbf purple */
         bg: { light: '#F8FAFC', dark: '#0B1220' },
         card: { light: '#FFFFFF', dark: '#0F172A' },
         focus: '#F59E0B'
       },
-      boxShadow: { 'soft': '0 12px 30px rgba(0,0,0,0.12)' },
-      outlineWidth: { 3: '3px' }
+      boxShadow: { 'soft': '0 12px 30px rgba(0,0,0,0.12)' }
     }
   },
   plugins: [],

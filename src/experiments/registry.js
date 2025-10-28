@@ -12,7 +12,7 @@ export const experiments = {
       { name:'vort', label:'Vorticity Confinement', min:0.0, max:1.0, step:0.01, symbol:'Adds rotational energy to preserve swirls' },
       { name:'radius', label:'Brush Radius', min:0.02, max:0.2, step:0.01, symbol:'Interaction radius (in UV space)' },
       { name:'force', label:'Force', min:0.1, max:1.5, step:0.05, symbol:'Momentum injected while dragging' },
-      { name:'dye', label:'Dye Intensity', min:0.2, max:1.2, step:0.05, symbol:'Color density of the injected dye' }
+      { name:'dye', label:'Dye Intensity', min:0.2, max:1.2, step:0.05, symbol:'Color density of injected dye' }
     ],
     defaults: defaultsFluidGL,
     setupInput: setupFluid,
