@@ -11,7 +11,7 @@ export default function GraphPanel(){
   return (
     <div className="p-4 bg-card-light dark:bg-card-dark rounded-lg shadow-soft">
       <h2 className="text-lg font-semibold mb-3">Live Graph</h2>
-      <div className="w-full h-72">
+      <div className="w-full h-80">
         <ResponsiveContainer width="100%" height="100%">
           <LineChart data={formatted}>
             <CartesianGrid strokeDasharray="3 3" />
@@ -20,7 +20,7 @@ export default function GraphPanel(){
             <YAxis yAxisId="right" orientation="right" />
             <Tooltip />
             <Legend />
-            {exp.graph.lines.map((ln, idx) => (
+            {exp.graph.lines.map(ln => (
               <Line key={ln.key} yAxisId={ln.yAxisId} type="monotone" dataKey={ln.key} stroke={ln.color} dot={false} />
             ))}
           </LineChart>

@@ -1,6 +1,5 @@
 
 import React from 'react';
-
 export default function Loader(){
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-white/40 dark:bg-black/40 z-50 pointer-events-none">

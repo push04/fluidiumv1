@@ -3,14 +3,14 @@ import React from 'react';
 import { useApp } from '../context/AppContext.jsx';
 
 export default function DataTable(){
-  const { data, selectedExperiment } = useApp();
+  const { data } = useApp();
   const cols = data.length? Object.keys(data[0]).filter(k=>k!=='time') : [];
   return (
     <div className="p-4 bg-card-light dark:bg-card-dark rounded-lg shadow-soft">
       <div className="flex items-center justify-between mb-3">
         <h2 className="text-lg font-semibold">Data</h2>
       </div>
-      <div className="overflow-auto h-72">
+      <div className="overflow-auto h-80">
         <table className="min-w-full text-sm">
           <thead>
             <tr className="bg-gray-100 dark:bg-gray-700">

@@ -4,17 +4,12 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  server: {
-    port: 3000,
-    strictPort: false,
-    open: true,
-    hmr: true,
-  },
+  server: { port: 3000, open: true, hmr: true },
   build: {
     outDir: 'dist',
     emptyOutDir: true,
-    sourcemap: false,
     target: 'esnext',
+    sourcemap: false,
     minify: 'terser',
     rollupOptions: {
       output: {
@@ -25,7 +20,5 @@ export default defineConfig({
       }
     }
   },
-  resolve: {
-    alias: { '@': '/src' }
-  }
+  resolve: { alias: { '@': '/src' } }
 })
