@@ -3,8 +3,8 @@ import { createFluidGL } from '../lib/fluidgl';
 
 export const defaultsFluidGL = () => ({ vort: 0.35, radius: 0.06, dye: 0.6, force: 0.6 });
 export const graphFluidGL = { lines: [
-  { key:'avgSpeed', label:'Avg Speed', color:'#4f46e5', yAxisId:'left' },
-  { key:'totalDye', label:'Total Dye', color:'#ec4899', yAxisId:'right' }
+  { key:'avgSpeed', label:'Avg Speed', color:'#4338CA', yAxisId:'left' },
+  { key:'totalDye', label:'Total Dye', color:'#EC4899', yAxisId:'right' }
 ]};
 
 let engine = null;
@@ -30,6 +30,8 @@ export function setupFluid(canvas, params){
   canvas.addEventListener('mousedown', down);
   window.addEventListener('mouseup', up);
   canvas.addEventListener('mousemove', move);
+  canvas.setAttribute('aria-label','Fluid canvas. Drag mouse to inject dye and momentum.');
+  canvas.setAttribute('role','img');
   return () => { canvas.removeEventListener('mousedown', down); window.removeEventListener('mouseup', up); canvas.removeEventListener('mousemove', move); };
 }
 

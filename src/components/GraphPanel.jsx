@@ -1,31 +1,22 @@
 
-import React from 'react';
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend } from 'recharts';
+import React, { Suspense } from 'react';
 import { useApp } from '../context/AppContext.jsx';
 import { getExperiment } from '../experiments/registry';
+
+const LazyCharts = React.lazy(() => import('./LazyCharts.jsx'));
 
 export default function GraphPanel(){
   const { data, selectedExperiment } = useApp();
   const exp = getExperiment(selectedExperiment);
   const formatted = data.map(p => ({ ...p, time: new Date(p.time).toLocaleTimeString() }));
   return (
-    <div className="p-4 card">
+    <section className="p-4 card" aria-label="Live graph">
       <h2 className="text-lg font-semibold mb-3">Live Graph</h2>
       <div className="w-full h-80">
-        <ResponsiveContainer width="100%" height="100%">
-          <LineChart data={formatted}>
-            <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="time" />
-            <YAxis yAxisId="left" />
-            <YAxis yAxisId="right" orientation="right" />
-            <Tooltip />
-            <Legend />
-            {exp.graph.lines.map(ln => (
-              <Line key={ln.key} yAxisId={ln.yAxisId} type="monotone" dataKey={ln.key} stroke={ln.color} dot={false} />
-            ))}
-          </LineChart>
-        </ResponsiveContainer>
+        <Suspense fallback={<div className="helper">Loading charts…</div>}>
+          <LazyCharts data={formatted} lines={exp.graph.lines} />
+        </Suspense>
       </div>
-    </div>
+    </section>
   )
 }

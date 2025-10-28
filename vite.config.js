@@ -15,7 +15,8 @@ export default defineConfig({
       output: {
         manualChunks: {
           'react-vendor': ['react', 'react-dom'],
-          'ui-vendor': ['recharts', 'framer-motion']
+          // charts are lazy-loaded from GraphPanel.jsx via React.lazy
+          'ui-vendor': ['framer-motion']
         }
       }
     }

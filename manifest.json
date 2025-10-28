@@ -1,7 +1,7 @@
 {
   "name": "Fluidium ULTRA",
   "short_name": "Fluidium",
-  "description": "Advanced interactive virtual lab for fluid mechanics using WebGL2.",
+  "description": "Advanced, accessible virtual lab for fluid mechanics using WebGL2.",
   "icons": [
     {
       "src": "/logo192.png",
@@ -11,6 +11,6 @@
   ],
   "start_url": "/",
   "display": "standalone",
-  "theme_color": "#4f46e5",
-  "background_color": "#ffffff"
+  "theme_color": "#4338CA",
+  "background_color": "#FFFFFF"
 }

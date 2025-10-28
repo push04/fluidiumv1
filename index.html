@@ -4,8 +4,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Fluidium ULTRA – Advanced interactive virtual lab." />
-    <meta name="theme-color" content="#4f46e5" />
+    <meta name="description" content="Fluidium ULTRA – Accessible, realistic virtual fluid mechanics lab." />
+    <meta name="theme-color" content="#4338CA" />
     <title>Fluidium ULTRA</title>
     <link rel="icon" type="image/png" href="/logo192.png" />
     <link rel="apple-touch-icon" href="/logo192.png" />
@@ -22,8 +22,10 @@
       })();
     </script>
   </head>
-  <body class="min-h-screen font-sans bg-gradient-to-tr from-primary via-secondary to-accent">
-    <div id="root"></div>
+  <body class="min-h-screen font-sans bg-bg-light dark:bg-bg-dark text-gray-900 dark:text-gray-100">
+    <header id="top" role="banner"></header>
+    <div id="root" role="main"></div>
+    <footer role="contentinfo" aria-label="Fluidium footer" class="sr-only">© Fluidium</footer>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
