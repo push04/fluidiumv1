@@ -1,0 +1,29 @@
+
+<!DOCTYPE html>
+<html lang="en" class="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Fluidium – Interactive Virtual Lab for Fluid Mechanics" />
+    <meta name="theme-color" content="#4f46e5" />
+    <title>Fluidium – Virtual Engineering Lab</title>
+    <link rel="icon" type="image/png" href="/logo192.png" />
+    <link rel="apple-touch-icon" href="/logo192.png" />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <script>
+      (() => {
+        const theme = localStorage.getItem('theme') || 'light';
+        document.documentElement.classList.remove('light', 'dark');
+        document.documentElement.classList.add(theme);
+      })();
+    </script>
+  </head>
+  <body class="min-h-screen font-sans bg-gradient-to-tr from-primary via-secondary to-accent">
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
