@@ -1,3 +1,4 @@
+
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
@@ -7,7 +8,7 @@ export default defineConfig({
     port: 3000,
     strictPort: false,
     open: true,
-    hmr: true
+    hmr: true,
   },
   build: {
     outDir: 'dist',
@@ -19,7 +20,7 @@ export default defineConfig({
       output: {
         manualChunks: {
           'react-vendor': ['react', 'react-dom'],
-          'ui-vendor': ['framer-motion', 'recharts']
+          'ui-vendor': ['recharts', 'framer-motion']
         }
       }
     }

@@ -1,7 +1,7 @@
 {
   "name": "Fluidium",
   "short_name": "Fluidium",
-  "description": "Interactive virtual lab for fluid mechanics and engineering simulations.",
+  "description": "Interactive virtual lab for fluid mechanics experiments.",
   "icons": [
     {
       "src": "/logo192.png",

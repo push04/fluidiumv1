@@ -1,9 +1,7 @@
+
 /** @type {import('tailwindcss').Config} */
-module.exports = {
-  content: [
-    './index.html',
-    './src/**/*.{js,jsx}',
-  ],
+export default {
+  content: ['./index.html', './src/**/*.{js,jsx}'],
   darkMode: 'class',
   theme: {
     extend: {
@@ -15,9 +13,9 @@ module.exports = {
         card: { light: '#ffffff', dark: '#1f2937' }
       },
       boxShadow: {
-        soft: '0 10px 25px rgba(0,0,0,0.08)'
+        'soft': '0 10px 25px rgba(0,0,0,0.08)'
       }
     }
   },
   plugins: [],
-};
+}

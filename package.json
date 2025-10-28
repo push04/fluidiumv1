@@ -1,39 +1,30 @@
+
 {
   "name": "fluidium",
   "private": true,
-  "version": "2.1.0",
+  "version": "3.0.0",
   "type": "module",
-  "description": "Fluidium – Interactive Virtual Lab for Fluid Mechanics & Engineering Simulations with enhanced UI/UX and dark mode support.",
-  "author": "Fluidium Team",
-  "license": "MIT",
+  "description": "Fluidium – Virtual Lab with interactive experiments (Bernoulli, Venturi, Reynolds) and rich UI/UX.",
   "scripts": {
     "dev": "vite",
     "build": "vite build --emptyOutDir",
-    "preview": "vite preview",
-    "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "lint:fix": "eslint src --ext js,jsx --fix",
-    "format": "prettier --write \"src/**/*.{js,jsx,css,md}\""
+    "preview": "vite preview"
   },
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "framer-motion": "^11.0.3",
-    "recharts": "^2.10.3"
+    "recharts": "^2.10.3",
+    "framer-motion": "^11.0.3"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^4.2.1",
     "vite": "^5.4.0",
     "terser": "^5.27.0",
-    "tailwindcss": "^3.4.1",
-    "postcss": "^8.4.33",
-    "autoprefixer": "^10.4.17",
-    "eslint": "^8.56.0",
-    "eslint-plugin-react": "^7.33.2",
-    "eslint-plugin-react-hooks": "^4.6.0",
-    "prettier": "^3.1.1"
+    "tailwindcss": "^3.4.3",
+    "postcss": "^8.4.35",
+    "autoprefixer": "^10.4.19"
   },
   "engines": {
-    "node": ">=16.0.0",
-    "npm": ">=8.0.0"
+    "node": ">=18"
   }
 }
