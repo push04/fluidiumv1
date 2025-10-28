@@ -19,16 +19,16 @@ export default function Toolbar({ canvasRef }){
 
   return (
     <div className="flex flex-wrap items-center gap-2 mb-3">
-      <button onClick={()=>exportCSV(data, `${selectedExperiment}-data`)} className="px-3 py-2 rounded bg-gray-200 dark:bg-gray-700">Download CSV</button>
-      <button onClick={handleSnapshot} className="px-3 py-2 rounded bg-gray-200 dark:bg-gray-700">Snapshot PNG</button>
+      <button onClick={()=>exportCSV(data, `${selectedExperiment}-data`)} className="btn btn-ghost"><i className="fas fa-file-csv"></i> CSV</button>
+      <button onClick={handleSnapshot} className="btn btn-ghost"><i className="fas fa-camera"></i> Snapshot</button>
       <div className="ml-auto flex items-center gap-2">
-        <input value={presetName} onChange={e=>setPresetName(e.target.value)} className="px-2 py-1 rounded border border-gray-300 dark:border-gray-600 bg-transparent" />
-        <button onClick={()=>savePreset(presetName)} className="px-3 py-2 rounded bg-secondary text-white">Save Preset</button>
-        <select onChange={e=>loadPreset(e.target.value)} defaultValue="">
+        <input value={presetName} onChange={e=>setPresetName(e.target.value)} className="input w-40" placeholder="Preset name" />
+        <button onClick={()=>savePreset(presetName)} className="btn btn-primary"><i className="fas fa-save"></i> Save</button>
+        <select onChange={e=>loadPreset(e.target.value)} defaultValue="" className="input w-36">
           <option value="" disabled>Load Preset</option>
           {expPresets.map(n => <option key={n} value={n}>{n}</option>)}
         </select>
-        <button onClick={()=>deletePreset(presetName)} className="px-3 py-2 rounded bg-accent text-white">Delete Preset</button>
+        <button onClick={()=>deletePreset(presetName)} className="btn btn-ghost"><i className="fas fa-trash"></i></button>
       </div>
     </div>
   )

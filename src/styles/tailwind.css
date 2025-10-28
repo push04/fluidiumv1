@@ -7,3 +7,10 @@
 body { @apply antialiased; }
 .light body { @apply text-gray-800 bg-background-light; }
 .dark body { @apply text-gray-100 bg-background-dark; }
+
+.btn { @apply inline-flex items-center gap-2 px-4 py-2 rounded-lg shadow-soft transition-colors; }
+.btn-primary { @apply bg-primary text-white hover:bg-secondary; }
+.btn-ghost { @apply bg-transparent border border-gray-300 dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-800; }
+.input { @apply w-full px-3 py-2 bg-transparent border border-gray-300 dark:border-gray-600 rounded-lg; }
+.card { @apply bg-card-light dark:bg-card-dark rounded-xl shadow-soft; }
+.label { @apply block text-sm font-medium mb-1; }

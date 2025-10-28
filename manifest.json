@@ -1,7 +1,7 @@
 {
-  "name": "Fluidium",
+  "name": "Fluidium ULTRA",
   "short_name": "Fluidium",
-  "description": "Advanced interactive virtual lab for fluid mechanics.",
+  "description": "Advanced interactive virtual lab for fluid mechanics using WebGL2.",
   "icons": [
     {
       "src": "/logo192.png",

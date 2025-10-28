@@ -9,7 +9,7 @@ export default function GraphPanel(){
   const exp = getExperiment(selectedExperiment);
   const formatted = data.map(p => ({ ...p, time: new Date(p.time).toLocaleTimeString() }));
   return (
-    <div className="p-4 bg-card-light dark:bg-card-dark rounded-lg shadow-soft">
+    <div className="p-4 card">
       <h2 className="text-lg font-semibold mb-3">Live Graph</h2>
       <div className="w-full h-80">
         <ResponsiveContainer width="100%" height="100%">

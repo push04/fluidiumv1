@@ -2,9 +2,9 @@
 {
   "name": "fluidium",
   "private": true,
-  "version": "4.0.0",
+  "version": "6.0.0",
   "type": "module",
-  "description": "Fluidium – Virtual Lab with advanced interactive experiments and polished UI/UX.",
+  "description": "Fluidium ULTRA – WebGL2 fluids (vorticity + obstacles), hydraulic jump, Moody friction, buoyancy tank.",
   "scripts": {
     "dev": "vite",
     "build": "vite build --emptyOutDir",
