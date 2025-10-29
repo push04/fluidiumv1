@@ -3,6 +3,8 @@ import { setupFluid, tickFluid, renderFluid, defaultsFluidGL, graphFluidGL, addO
 import { tickHJump, renderHJump, defaultsHJump, graphHJump } from './hydraulic_jump';
 import { tickMoody, renderMoody, defaultsMoody, graphMoody } from './moody';
 import { tickBuoy, renderBuoy, defaultsBuoy, graphBuoy } from './buoyancy';
+import { tickRe, renderRe, defaultsRe, graphRe } from './reynolds';
+import { tickVenturi, renderVenturi, defaultsVenturi, graphVenturi } from './venturi';
 
 export const experiments = {
   fluid_gl: {
@@ -44,6 +46,28 @@ export const experiments = {
       { name:'g', label:'Gravity g (m/s²)', min:9.0, max:9.81, step:0.01, symbol:'Acceleration due to gravity' }
     ],
     defaults: defaultsMoody, tick: tickMoody, render: renderMoody, graph: graphMoody
+  },
+
+  reynolds: {
+    id:'reynolds',
+    title:'Reynolds Experiment',
+    params: [
+      { name:'V', label:'Velocity V (m/s)', min:0.01, max:5, step:0.01, symbol:'Bulk flow speed' },
+      { name:'D', label:'Diameter D (m)', min:0.005, max:0.5, step:0.001, symbol:'Pipe diameter' },
+      { name:'nu', label:'Kinematic viscosity ν (m²/s)', min:1e-7, max:2e-5, step:1e-7, symbol:'Fluid property' }
+    ],
+    defaults: defaultsRe, tick: tickRe, render: renderRe, graph: graphRe
+  },
+  venturi: {
+    id:'venturi',
+    title:'Venturi Meter',
+    params: [
+      { name:'Q', label:'Discharge Q (m³/s)', min:0.001, max:0.5, step:0.001, symbol:'Volumetric flow rate' },
+      { name:'d1', label:'Inlet Diameter d1 (m)', min:0.02, max:0.5, step:0.005, symbol:'Upstream diameter' },
+      { name:'d2', label:'Throat Diameter d2 (m)', min:0.01, max:0.4, step:0.005, symbol:'Constriction diameter' },
+      { name:'rho', label:'Density ρ (kg/m³)', min:500, max:1500, step:10, symbol:'Fluid density' }
+    ],
+    defaults: defaultsVenturi, tick: tickVenturi, render: renderVenturi, graph: graphVenturi
   },
   buoyancy: {
     id:'buoyancy',

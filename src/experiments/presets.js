@@ -22,6 +22,20 @@ export const experimentMeta = {
       { key:'rough-turb', title:'Rough Pipe (Turbulent)', desc:'High roughness case.', params:{ Re:2e5, relRough:0.005, L:30, D:0.25, V:3.5, g:9.81 } }
     ]
   },
+  reynolds: {
+    title: 'Reynolds Experiment',
+    presets: [
+      { key:'laminar', title:'Laminar Regime', desc:'Low V, small D; Re < 2000', params:{ V:0.2, D:0.02, nu:1e-6 } },
+      { key:'turbulent', title:'Turbulent Regime', desc:'Higher V and D; Re > 4000', params:{ V:2.5, D:0.08, nu:1e-6 } }
+    ]
+  },
+  venturi: {
+    title: 'Venturi Meter',
+    presets: [
+      { key:'standard', title:'Standard Case', desc:'Moderate Q and contraction', params:{ Q:0.02, d1:0.12, d2:0.06, rho:1000 } },
+      { key:'highQ', title:'High Discharge', desc:'Higher flow rate', params:{ Q:0.12, d1:0.2, d2:0.1, rho:1000 } }
+    ]
+  },
   buoyancy: {
     title: 'Buoyancy Tank',
     presets: [

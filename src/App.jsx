@@ -5,6 +5,7 @@ import Sidebar from './components/Sidebar.jsx';
 import Toolbar from './components/Toolbar.jsx';
 import GraphPanel from './components/GraphPanel.jsx';
 import DataTable from './components/DataTable.jsx';
+import TheoryPanel from './components/TheoryPanel.jsx';
 import InputControl from './components/InputControl.jsx';
 import Loader from './components/Loader.jsx';
 import { useApp } from './context/AppContext.jsx';
