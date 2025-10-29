@@ -30,7 +30,8 @@ export const experiments = {
       { name:'Q', label:'Discharge Q (m³/s)', min:0.05, max:1.0, step:0.01, symbol:'Flow rate through the channel' },
       { name:'b', label:'Width b (m)', min:0.2, max:3, step:0.1, symbol:'Channel width' },
       { name:'y1', label:'Upstream depth y1 (m)', min:0.05, max:0.8, step:0.01, symbol:'Depth before the jump' },
-      { name:'g', label:'Gravity g (m/s²)', min:9.0, max:9.81, step:0.01, symbol:'Acceleration due to gravity' }
+      { name:'g', label:'Gravity g (m/s²)', min:9.0, max:9.81, step:0.01, symbol:'Acceleration due to gravity' },
+      { name:'opening', label:'Valve Opening (0–1)', min:0, max:1, step:0.01, symbol:'Fractional opening of the gate' }
     ],
     defaults: defaultsHJump, tick: tickHJump, render: renderHJump, graph: graphHJump
   },
@@ -43,7 +44,8 @@ export const experiments = {
       { name:'L', label:'Pipe Length L (m)', min:1, max:100, step:1, symbol:'Length of pipe segment' },
       { name:'D', label:'Diameter D (m)', min:0.05, max:1.0, step:0.01, symbol:'Internal diameter of pipe' },
       { name:'V', label:'Mean Velocity V (m/s)', min:0.1, max:8, step:0.1, symbol:'Bulk flow speed' },
-      { name:'g', label:'Gravity g (m/s²)', min:9.0, max:9.81, step:0.01, symbol:'Acceleration due to gravity' }
+      { name:'g', label:'Gravity g (m/s²)', min:9.0, max:9.81, step:0.01, symbol:'Acceleration due to gravity' },
+      { name:'opening', label:'Valve Opening (0–1)', min:0, max:1, step:0.01, symbol:'Fractional opening of the gate' }
     ],
     defaults: defaultsMoody, tick: tickMoody, render: renderMoody, graph: graphMoody
   },

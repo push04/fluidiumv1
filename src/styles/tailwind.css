@@ -22,3 +22,11 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 .error { @apply text-xs text-red-500; }
 canvas { outline: none; }
 .touch-target { @apply min-h-[44px] min-w-[44px]; }
+
+
+/* --- Pro polish: canvas frame & subtle glass cards --- */
+.canvas-frame {
+  @apply rounded-xl border border-gray-200 dark:border-gray-700 overflow-hidden shadow-soft bg-gradient-to-br from-white/40 to-white/10 dark:from-slate-900/40 dark:to-slate-900/10 backdrop-blur;
+}
+.card h2 { @apply text-gray-800 dark:text-gray-100; }
+.btn-primary { @apply bg-gradient-to-r from-primary to-secondary; }
