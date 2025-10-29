@@ -1,16 +1,11 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import App from './App.jsx';
 import { AppProvider } from './context/AppContext.jsx';
-import { ToastProvider } from './context/ToastContext.jsx';
+import App from './App.jsx';
 import './styles/tailwind.css';
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <ToastProvider>
-      <AppProvider>
-        <App />
-      </AppProvider>
-    </ToastProvider>
+    <AppProvider><App /></AppProvider>
   </React.StrictMode>
 );

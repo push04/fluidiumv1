@@ -1,14 +1,13 @@
 
 {
   "name": "fluidium",
+  "version": "8.0.0",
   "private": true,
-  "version": "7.0.1",
-  "type": "module",
-  "description": "Fluidium ULTRA FINAL HOTFIX – stable charts, error overlay, static WebGL import.",
+  "description": "Fluidium – robust virtual fluid mechanics lab (B.Tech)",
   "scripts": {
     "dev": "vite",
     "build": "vite build --emptyOutDir",
-    "preview": "vite preview"
+    "preview": "vite preview --strictPort"
   },
   "dependencies": {
     "react": "^18.2.0",

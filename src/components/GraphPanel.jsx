@@ -1,23 +1,31 @@
 
-import React, { Suspense } from 'react';
+import React from 'react';
 import { useApp } from '../context/AppContext.jsx';
+import { LineChart, Line, XAxis, YAxis, Tooltip, CartesianGrid, Legend, ResponsiveContainer } from 'recharts';
 import { getExperiment } from '../experiments/registry';
-
-const LazyCharts = React.lazy(() => import('./LazyCharts.jsx'));
 
 export default function GraphPanel(){
   const { data, selectedExperiment } = useApp();
   const exp = getExperiment(selectedExperiment);
-  const formatted = data.map(p => ({ ...p, time: new Date(p.time).toLocaleTimeString() }));
-  const descId = 'chart-desc';
+  const lines = exp.graph.lines || [];
+  const formatted = data.map(d => ({ ...d, t: new Date(d.time).toLocaleTimeString() }));
   return (
-    <section className="p-4 card" aria-label="Live graph" aria-describedby={descId}>
-      <h2 className="text-lg font-semibold mb-3">Live Graph</h2>
-      <p id={descId} className="sr-only">The chart plots experiment metrics over time with accessible colors. X axis is time.</p>
+    <section className="card p-4" aria-label="Live Graph">
+      <h2 className="text-lg font-semibold mb-2">Live Graph</h2>
       <div className="w-full h-80">
-        <Suspense fallback={<div className="helper">Loading charts…</div>}>
-          <LazyCharts data={formatted} lines={exp.graph.lines} />
-        </Suspense>
+        <ResponsiveContainer width="100%" height="100%">
+          <LineChart data={formatted}>
+            <CartesianGrid strokeDasharray="3 3" />
+            <XAxis dataKey="t" />
+            <YAxis yAxisId="left" />
+            <YAxis yAxisId="right" orientation="right" />
+            <Tooltip />
+            <Legend />
+            {lines.map(l => (
+              <Line key={l.key} dataKey={l.key} yAxisId={l.yAxisId} type="monotone" stroke={l.color} dot={false} />
+            ))}
+          </LineChart>
+        </ResponsiveContainer>
       </div>
     </section>
   )

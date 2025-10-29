@@ -1,0 +1,9 @@
+{
+  "name": "Fluidium",
+  "short_name": "Fluidium",
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#0ea5e9",
+  "background_color": "#ffffff",
+  "icons": []
+}
