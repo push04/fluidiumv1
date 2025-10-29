@@ -1,5 +1,4 @@
 
-// Curated presets with friendly names + descriptions
 export const experimentMeta = {
   fluid_gl: {
     title: 'WebGL Fluid (vorticity + obstacles)',

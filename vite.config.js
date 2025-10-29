@@ -15,8 +15,7 @@ export default defineConfig({
       output: {
         manualChunks: {
           'react-vendor': ['react', 'react-dom'],
-          'ui-vendor': ['framer-motion'],
-          'charts': ['recharts']
+          'ui-vendor': ['framer-motion']
         }
       }
     }

@@ -1,7 +1,6 @@
 
 import React from 'react';
 import { useApp } from '../context/AppContext.jsx';
-
 export default function DataTable(){
   const { data, isRunning } = useApp();
   const cols = data.length? Object.keys(data[0]).filter(k=>k!=='time') : [];
@@ -28,7 +27,7 @@ export default function DataTable(){
             {data.length===0 && (
               <tr>
                 <td colSpan={cols.length+1} className="px-3 py-3 text-center">
-                  No data yet. {isRunning? 'Simulation running…' : 'Press '} {!isRunning && <strong>Start</strong>} {!isRunning && ' to begin and see results here.'}
+                  No data yet. {isRunning? 'Simulation running…' : 'Press '} {!isRunning and <strong>Start</strong>} {!isRunning && ' to begin and see results here.'}
                 </td>
               </tr>
             )}

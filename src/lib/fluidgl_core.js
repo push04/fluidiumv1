@@ -1,6 +1,5 @@
 
 import { createFluidGL as implCreateFluidGL } from './fluidgl_impl.js';
-
 export function createFluidGL(canvas, opts = {}) {
   const gl = canvas.getContext('webgl2');
   if (!gl){

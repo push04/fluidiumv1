@@ -1,9 +1,7 @@
 
 import React, { createContext, useContext, useState, useCallback } from 'react';
-
 const ToastCtx = createContext();
 export const useToast = () => useContext(ToastCtx);
-
 export function ToastProvider({ children }){
   const [items, setItems] = useState([]);
   const push = useCallback((msg, type='info') => {

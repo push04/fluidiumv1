@@ -4,15 +4,7 @@ export const graphHJump = { lines: [
   { key:'Fr1', label:'Froude (upstream)', color:'#1F77B4', yAxisId:'left' },
   { key:'y2', label:'Sequent Depth y2 (m)', color:'#FF7F0E', yAxisId:'right' }
 ]};
-
-export function tickHJump({ Q, b, y1, g }){
-  const v1 = Q/(b*y1);
-  const Fr1 = v1/Math.sqrt(g*y1);
-  const y2 = 0.5*y1*(Math.sqrt(1+8*Fr1*Fr1)-1);
-  const ELoss = (y2 - y1)**3 / (4*y1*y2);
-  return { Fr1, y2, ELoss };
-}
-
+export function tickHJump({ Q, b, y1, g }){ const v1 = Q/(b*y1); const Fr1 = v1/Math.sqrt(g*y1); const y2 = 0.5*y1*(Math.sqrt(1+8*Fr1*Fr1)-1); const ELoss = (y2 - y1)**3 / (4*y1*y2); return { Fr1, y2, ELoss }; }
 export function renderHJump(ctx, W, H, { y2 }){
   ctx.clearRect(0,0,W,H);
   const water = '#60a5fa', ground='#1f2937';

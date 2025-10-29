@@ -5,7 +5,6 @@ import App from './App.jsx';
 import { AppProvider } from './context/AppContext.jsx';
 import { ToastProvider } from './context/ToastContext.jsx';
 import './styles/tailwind.css';
-
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <ToastProvider>

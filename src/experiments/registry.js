@@ -57,6 +57,5 @@ export const experiments = {
     defaults: defaultsBuoy, tick: tickBuoy, render: renderBuoy, graph: graphBuoy
   }
 };
-
 export const getExperiment = (id) => experiments[id];
 export const getDefaults = (id) => (experiments[id]? experiments[id].defaults(): {});

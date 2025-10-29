@@ -1,7 +1,6 @@
 
 import React from 'react';
 import { useApp } from '../context/AppContext.jsx';
-
 export default function PresetPicker(){
   const { selectedExperiment, experimentMeta, applyCuratedPreset } = useApp();
   const meta = experimentMeta[selectedExperiment];

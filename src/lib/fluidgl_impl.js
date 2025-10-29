@@ -1,6 +1,5 @@
 
 export function createFluidGL(canvas, opts={}){
-  // Minimal placeholder render for environments without GL shader compilation.
   const api = {
     step(){}, render(){ const ctx = canvas.getContext('2d'); ctx.fillStyle='#0ea5e9'; ctx.fillRect(0,0,canvas.width,canvas.height); },
     addForce(){}, addDye(){}, addObstacleRect(){}, clear(){},
